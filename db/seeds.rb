@@ -5,3 +5,32 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+require 'faker'
+
+puts 'Creating 100 fake plans...'
+5.times do
+  plan = Plan.new(
+    title: Faker::Movie.quote,
+    description: Faker::Lorem.paragraphs,
+    picture: Faker::LoremPixel.image,
+    location: "Shanghai",
+    price: "15",
+    start_time: Faker::Time.forward(23, :morning),
+    end_time: nil
+  )
+  plan.save!
+end
+puts 'Finished!'
+
+
+
+
+
+
+
+
+# name:    Faker::Company.name,
+#     address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
+#     rating:  (0..5).to_a.sample
