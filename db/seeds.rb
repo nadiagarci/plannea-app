@@ -12,14 +12,13 @@ require 'faker'
 puts 'Creating 100 fake plans...'
 5.times do
   plan = Plan.new(
-    title:
-    description:
-    picture: Faker::LoremPixel.image
-    location: "Shanghai"
-    price:
-    start_time: Faker::Time.forward(23, :morning)
+    title: Faker::Movie.quote,
+    description: Faker::Lorem.paragraphs,
+    picture: Faker::LoremPixel.image,
+    location: "Shanghai",
+    price: "15",
+    start_time: Faker::Time.forward(23, :morning),
     end_time: nil
-
   )
   plan.save!
 end
