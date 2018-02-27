@@ -1,0 +1,5 @@
+<ul>
+  <% @plans.each do |id, plan| %>
+    <li><%= plan[:title] %> - <%= plan[:description] %>)</li>
+  <% end %>
+</ul>
