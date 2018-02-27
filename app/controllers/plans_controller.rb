@@ -1,18 +1,5 @@
 class PlansController < ApplicationController
-
-  def new
-    @plan = Plan.new
-  end
-
-  def create
-    @plan = Plan.find(params[:id])
-    if @plan.save
-      redirect_to plan_path(@plan)
-    else
-      render :new
-  end
-end
-
+  # nadia coded: index and show
   def index
     @plans = Plan.all
   end
@@ -29,5 +16,27 @@ end
     @plan = Plan.find(params[:id])
   end
 
+
+
+ # almu coded: new and create
+  def new
+    @plan = Plan.new
+  end
+
+  def create
+    @plan = Plan.new(plan_params)
+    @plan.user = current_user
+    if @plan.save
+      redirect_to plan_path(@plan)
+    else
+      render :new
+    end
+  end
+
+
+  private
+  def plan_params
+    params.require(:plan).permit(:title, :description, :location, :price, :picture)
+  end
 
 end
