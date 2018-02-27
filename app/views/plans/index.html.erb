@@ -1,3 +1,6 @@
+
+
+<h2>This are the plans that you can enjoy in <%= params[:location] %></h2>
 <ul>
   <% @plans.each do |id, plan| %>
     <li><%= plan[:title] %> - <%= plan[:description] %>)</li>
