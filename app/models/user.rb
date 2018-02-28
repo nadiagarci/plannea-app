@@ -11,6 +11,8 @@ class User < ApplicationRecord
   validates :country, presence: true
 
 
-  has_many :plans, through: :bookings, dependent: :destroy
+  has_many :plans
+  has_many :bookings
+  has_many :reviews
 
 end
