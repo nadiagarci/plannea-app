@@ -10,3 +10,4 @@
 
 class Plan < ApplicationRecord
 end
+
