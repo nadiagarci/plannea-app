@@ -9,7 +9,7 @@
 #     t.datetime "updated_at", null: false
 
 class Plan < ApplicationRecord
-  mount_uploader :photo, PhotoUploader
+  mount_uploader :picture, PhotoUploader
 
   validates :title, presence: true
   validates :description, presence: true
