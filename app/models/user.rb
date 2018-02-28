@@ -6,9 +6,11 @@ class User < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true
-  validates :description, presence: true
-  validates :city, presence: true
-  validates :country, presence: true
+
+  #comentado porque aun no esta creado
+  # validates :description, presence: true
+  # validates :city, presence: true
+  # validates :country, presence: true
 
 
   has_many :plans
