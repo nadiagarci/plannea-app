@@ -1,27 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-
-
-
-  <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Business Frontpage - Start Bootstrap Template</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="css/business-frontpage.css" rel="stylesheet">
-
-  </head>
-
-  <body>
 
     <!-- Header with Background Image -->
 
@@ -49,13 +26,19 @@
           <h2 class="mt-4">Description:</h2>
           <p><%= @plan[:description] %></p>
           <p>
-            <a class="btn btn-primary btn-lg" href="#">Book Now &raquo;</a>
+          <%= link_to "Book Now", new_plan_booking_path(@plan) , class: "btn btn-primary btn-lg" %>
+
+            <!-- <a class="btn btn-primary btn-lg" href="#">Book Now &raquo;</a> -->
           </p>
         </div>
 
 
-      </div>
 
+
+
+
+      <!-- </div>
+ -->
       <!-- /.row -->
 <!--
       <div class="row">
@@ -99,18 +82,11 @@
       </div>
       <!-- /.row -->
 
-    </div>
-    <!-- /.container -->
 
-    <!-- Footer -->
-     -->
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  </body>
 
-</html>
+
+
 
 
