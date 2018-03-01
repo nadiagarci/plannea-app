@@ -2,10 +2,16 @@
   <div class="banner-content">
     <h1>Have a nice plan</h1>
     <p>If you are alone in a new city join us</p>
-    <br>
-    <form action="<%=plans_path %>" class: "btn btn-primary btn-lg">
-      <input type="text" name="search" placeholder="Search..">
-      <input type="submit" value = "Book your plan">
-    </form>
+    <%#= link_to "Book a plan", plans_path , class: "btn btn-primary btn-lg" %>
+
+    <%= form_tag plans_path, method: :get, class: "form-inline" do%>
+      <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+      placeholder: "Search"
+      %>
+      <%= submit_tag "Find a plan", class: "btn btn-primary" %>
+    <% end %>
+
   </div>
 </div>
