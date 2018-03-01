@@ -2,9 +2,10 @@
   <div class="banner-content">
     <h1>Have a nice plan</h1>
     <p>If you are alone in a new city join us</p>
-    <%= link_to "Book a plan", plans_path , class: "btn btn-primary btn-lg" %>
+    <br>
+    <form action="<%=plans_path %>" class: "btn btn-primary btn-lg">
+      <input type="text" name="search" placeholder="Search..">
+      <input type="submit" value = "Book your plan">
+    </form>
   </div>
 </div>
-
-
-

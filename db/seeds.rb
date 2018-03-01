@@ -15,7 +15,7 @@ puts 'Creating 100 fake plans...'
     title: Faker::Movie.quote,
     description: Faker::Lorem.paragraphs,
     picture: Faker::LoremPixel.image,
-    location: "Shanghai",
+    location: "Shanghai" "Amsterdam" "London" "Santo Domingo" "Tokyo" "Berlin",
     price: "15",
     start_time: Faker::Time.forward(23, :morning),
     end_time: nil
