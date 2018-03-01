@@ -22,7 +22,7 @@
 }
 
 input[type=text] {
-    width: 130px;
+    width: 100px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
     color: black;
@@ -30,9 +30,9 @@ input[type=text] {
 
 /* When the input field gets focus, change its width to 100% */
 input[type=text]:focus {
-    width: 100%;
+    width: 30%;
 }
 
-// .form-group {
-//   color: black;
-// }
+.banner-content {
+  width: 60%;
+}
