@@ -1,11 +1,16 @@
 class PlansController < ApplicationController
   # nadia coded: index and show
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
-    if params[:search]
-    @plans = Plan.search_by_title_and_location(params[:search])
+    #almu
+    if params[:query].present?
+      sql_query = "title ILIKE :query OR location ILIKE :query"
+      @plans = Plan.where(sql_query, query: "%#{params[:query]}%")
     else
-    @plans = Plan.all
+      @plans = Plan.all
     end
+
   end
 
   # def index
