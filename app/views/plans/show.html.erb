@@ -28,17 +28,22 @@
 
 
 
-
+      <% if current_user = @plan.user %>
 
       <p><%= link_to "Edit", edit_plan_path(@plan), class: "btn btn-primary btn-lg" %>
         <%= link_to "Delete", plan_path(@plan), class: "btn btn-primary btn-lg", method: :delete,
         data: { confirm: "Are you sure?" } %></p>
+      <% end %>
+
+
+
+
         <p><%= link_to "Back to all the plans", plans_path, class: "btn btn-primary btn-lg" %></p>
 
 
 
 
-    </div>
+      </div>
 
 
 
