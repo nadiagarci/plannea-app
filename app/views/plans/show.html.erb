@@ -1,13 +1,11 @@
 
-
     <!-- Header with Background Image -->
 
-
-    <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= asset_path("Girls-Shopping.jpg") %>');">
+    <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%),url('<%= cl_image_path(@plan.picture) %>');">
     <div class="banner-content">
     <h1><%= @plan[:title] %></h1>
     </div>
-</div>
+
 
     <!-- Page Content -->
     <div class="container">
@@ -25,10 +23,15 @@
         <div class="col-sm-8">
           <h2 class="mt-4">Description:</h2>
           <p><%= @plan[:description] %></p>
-          <p>
-          <%= link_to "Book Now", new_plan_booking_path(@plan) , class: "btn btn-primary btn-lg" %>
+          <p><%= link_to "Book Now", new_plan_booking_path(@plan) , class: "btn btn-primary btn-lg" %></>
 
-            <!-- <a class="btn btn-primary btn-lg" href="#">Book Now &raquo;</a> -->
+          
+
+            
+
+            <p><%= link_to "Edit", edit_plan_path(@plan), class: "btn btn-primary btn-lg" %>
+            <!-- <a class="btn btn-primary btn-lg" href="<%= edit_plan_path(@plan)%>">Edit &raquo;</a> -->
+
           </p>
         </div>
 
@@ -86,6 +89,11 @@
 
 
 
+
+
+
+
+    </div>
 
 
 
