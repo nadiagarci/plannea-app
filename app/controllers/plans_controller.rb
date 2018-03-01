@@ -40,15 +40,14 @@ end
 
   def update
     @plan = Plan.find(params[:id])
-    @plan.update(title: params[:title],
-      description: params[:description])
+    @plan.update(plan_params)
     redirect_to plan_path(@plan) => "Your post has been successfully updated"
   end
 
   def destroy
     @plan = Plan.find(params[:id])
     @plan.destroy
-    redirect_to plan_path(@plan) => "Your plan has been successfully destroyed"
+    redirect_to plans_path(@plan) => "Your plan has been successfully destroyed"
   end
 
 
