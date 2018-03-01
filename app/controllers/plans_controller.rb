@@ -1,7 +1,11 @@
 class PlansController < ApplicationController
   # nadia coded: index and show
   def index
+    if params[:search]
+    @plans = Plan.search_by_title_and_location(params[:search])
+    else
     @plans = Plan.all
+    end
   end
 
   # def index
