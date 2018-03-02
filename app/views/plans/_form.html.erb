@@ -1,9 +1,9 @@
 
 <%= simple_form_for(@plan) do |f| %>
-    <%= f.input :title, placeholder: "Add the title" %>
-    <%= f.input :description, placeholder: "Add the description" %>
-    <%= f.input :location, placeholder: "Add a location" %>
-    <%= f.input :price, placeholder: "Add price of the plan" %>
+    <%= f.input :title, placeholder: "What do you want to plan?" %>
+    <%= f.input :description, placeholder: "Add a description of your plan", as: :text %>
+    <%= f.input :location, placeholder: "City" %>
+    <%= f.input :price, placeholder: "How much?" %>
 
 
     <%= f.input :picture %>

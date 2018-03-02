@@ -25,83 +25,15 @@
     <h2 class="mt-4">Description:</h2>
     <p><%= @plan[:description] %></p>
     <p><%= link_to "Book Now", new_plan_booking_path(@plan) , class: "btn btn-primary btn-lg" %></>
-
-
-
       <% if current_user = @plan.user %>
-
-      <p><%= link_to "Edit", edit_plan_path(@plan), class: "btn btn-primary btn-lg" %>
-        <%= link_to "Delete", plan_path(@plan), class: "btn btn-primary btn-lg", method: :delete,
+    <p>
+      <%= link_to "Edit", edit_plan_path(@plan), class: "btn btn-primary btn-lg" %>
+      <%= link_to "Delete", plan_path(@plan), class: "btn btn-primary btn-lg", method: :delete,
         data: { confirm: "Are you sure?" } %></p>
       <% end %>
-
-
-
-
-        <p><%= link_to "Back to all the plans", plans_path, class: "btn btn-primary btn-lg" %></p>
-
-
-
+      <p><%= link_to "Back to plans", plans_path %></p>
 
       </div>
-
-
-
-
-
-
-      <!-- </div>
-      -->
-      <!-- /.row -->
-<!--
-      <div class="row">
-        <div class="col-sm-4 my-4">
-          <div class="card">
-            <img class="card-img-top" src="http://placehold.it/300x200" alt="">
-            <div class="card-body">
-              <h4 class="card-title">Card title</h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus.</p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">Find Out More!</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4 my-4">
-          <div class="card">
-            <img class="card-img-top" src="http://placehold.it/300x200" alt="">
-            <div class="card-body">
-              <h4 class="card-title">Card title</h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus totam ut praesentium aut.</p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">Find Out More!</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4 my-4">
-          <div class="card">
-            <img class="card-img-top" src="http://placehold.it/300x200" alt="">
-            <div class="card-body">
-              <h4 class="card-title">Card title</h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">Find Out More!</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <!-- /.row -->
-
-
-
-
-
-
-
-
 
     </div>
 

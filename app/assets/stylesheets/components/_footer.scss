@@ -1,11 +1,12 @@
 .footer {
-  background: #F4F4F4;
+  background: #1f7a8c;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100px;
-  padding: 0px 50px;
-  color: rgba(0,0,0,0.3);
+  padding: 100px 50px;
+  color: rgba(0,0,0,0.6);
+
 }
 .footer-links {
   display: flex;
@@ -13,14 +14,24 @@
 }
 .footer-links a {
   color: black;
-  opacity: 0.15;
+  opacity: 0.4;
   text-decoration: none;
-  font-size: 24px;
   padding: 0px 10px;
 }
 .footer-links a:hover {
+  color: black;
   opacity: 1;
 }
+.footer-links li {
+  text-decoration: none;
+  list-style:none;
+
+}
 .footer .fa-heart {
-  color: #D23333;
+  color: #7a458e;
+}
+.fab{
+  font-size: 30px;
+  margin: 10px;
+
 }

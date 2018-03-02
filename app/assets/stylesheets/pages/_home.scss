@@ -9,3 +9,38 @@
 // input[type=text]:focus {
 //     width: 100%;
 // }
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900,900italic);
+
+
+.heading-title {
+    margin-bottom: 70px;
+    margin-top: 70px
+}
+.img-responsive{
+width: 200px;
+margin-right: 0;
+}
+
+.team-member, .team-member .team-img {
+    position: relative;
+}
+
+.team-title {
+    // position: static;
+    padding: 20px 0;
+    display: inline-block;
+    letter-spacing: 2px;
+    width: 100%;
+}
+.team-title h5 {
+
+    display: block;
+    text-transform: uppercase;
+    margin: auto;
+}
+.team-title span {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #a5a5a5;
+    letter-spacing: 1px;
+}
