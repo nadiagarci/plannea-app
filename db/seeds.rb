@@ -8,18 +8,23 @@
 
 
 require 'faker'
+User.where(email: "test-test@test.com").destroy_all
 
-puts 'Creating 100 fake plans...'
+user = User.create!(email: "test-test@test.com", password: "password")
+
+puts 'Creating 5 fake plans...'
 5.times do
   plan = Plan.new(
     title: Faker::Movie.quote,
     description: Faker::Lorem.paragraphs,
-    picture: Faker::LoremPixel.image,
-    location: "Shanghai" "Amsterdam" "London" "Santo Domingo" "Tokyo" "Berlin",
+    location: ["Shanghai", "Amsterdam", "London", "Santo Domingo", "Tokyo", "Berlin"].sample,
     price: "15",
+    user_id: user.id,
     start_time: Faker::Time.forward(23, :morning),
     end_time: nil
   )
+  plan.remote_picture_url = "https://source.unsplash.com/1600x900/?experience"
+
   plan.save!
 end
 puts 'Finished!'

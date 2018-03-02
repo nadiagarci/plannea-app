@@ -25,11 +25,13 @@
     <h2 class="mt-4">Description:</h2>
     <p><%= @plan[:description] %></p>
 
-      <% if current_user = @plan.user %>
-    <p>
-      <%= link_to "Edit", edit_plan_path(@plan), class: "btn btn-primary btn-lg" %>
-      <%= link_to "Delete", plan_path(@plan), class: "btn btn-primary btn-lg", method: :delete,
-        data: { confirm: "Are you sure?" } %></p>
+    <% if current_user == @plan.user %>
+      <p>
+        <%= link_to "Edit", edit_plan_path(@plan), class: "btn btn-primary btn-lg" %>
+        <%= link_to "Delete", plan_path(@plan), class: "btn btn-primary btn-lg", method: :delete,
+        data: { confirm: "Are you sure?" } %>
+
+      </p>
       <% else %>
         <p><%= link_to "Book Now", new_plan_booking_path(@plan) , class: "btn btn-primary btn-lg" %></p>
 

@@ -9,13 +9,13 @@ class PlansController < ApplicationController
       @plans = Plan.all
     end
 
-    @plans = Plan.where.not(latitude: nil, longitude: nil)
+    @plans = @plans.where.not(latitude: nil, longitude: nil)
 
     @markers = @plans.map do |plan|
       {
         lat: plan.latitude,
-        lng: plan.longitude,
-        infoWindow: { content: render_to_string(partial: "/plans/map_box", locals: { plan: plan }) }
+        lng: plan.longitude
+        #infoWindow: { content: render_to_string(partial: "/plans/map_box", locals: { plan: plan }) }
       }
     end
   end
