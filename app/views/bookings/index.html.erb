@@ -1,0 +1,6 @@
+<h1 class="text-center">This are your plans:
+</h1>
+<% @bookings.each do |booking| %>
+  <%= booking.plan.id %>
+  <%= booking.plan.title %><br>
+<% end %>
