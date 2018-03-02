@@ -1,6 +1,21 @@
 <h1 class="text-center">This are your plans:
 </h1>
-<% @bookings.each do |booking| %>
-  <%= booking.plan.id %>
-  <%= booking.plan.title %><br>
-<% end %>
+<div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+  <% @bookings.each do |booking| %>
+    <%= booking.plan.id %>
+    <%= booking.plan.title %><br>
+  <% end %>
+  <p><%= link_to "Back to plans", plans_path %></p>
+</div>
+<br>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
