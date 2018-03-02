@@ -22,4 +22,3 @@ class BookingsController < ApplicationController
     params.require(:bookings).permit(:confirmed)
   end
 end
-
