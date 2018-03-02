@@ -12,15 +12,9 @@
     <h1>Have a nice plan</h1>
     <p>If you are alone in a new city join us</p>
     <%#= link_to "Book a plan", plans_path , class: "btn btn-primary btn-lg" %>
+      <%= render 'shared/search_bar' %>
 
-    <%= form_tag plans_path, method: :get, class: "form-inline" do%>
-      <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-      placeholder: "Search"
-      %>
-      <%= submit_tag "Find a plan", class: "btn btn-primary" %>
-    <% end %>
+  <!-- aqui va el codigo que he pegado en _search_bar -->
 
   </div>
 

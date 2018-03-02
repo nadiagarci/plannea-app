@@ -1,3 +1,5 @@
+
+
 <div class="navbar-wagon">
   <!-- Logo -->
 <%= link_to root_path, class: "navbar-wagon-brand" do %>
@@ -5,6 +7,9 @@
   <% end %>
 
   <%#= link_to "Plannea", root_path , class: "navbar-wagon-brand" %>
+  <div>
+    <%= render 'shared/search_bar' unless url_for == root_path %>
+  </div>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
