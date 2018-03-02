@@ -1,10 +1,27 @@
 <div class="footer">
-  <div class="footer-links">
+  <div class="logo">
+    <%= link_to root_path do %>
+      <%= image_tag "logo_plannea_white.png", height: 50 %>
+    <% end %>
+  </div>
+  <div class="footer-links ">
     <a href="#"><i class="fab fa-facebook-f"></i></a>
     <a href="#"><i class="fab fa-twitter"></i></a>
     <a href="#"><i class="fab fa-instagram"></i></a>
   </div>
+  <div class="footer-grid-block footer-links">
+    <ul class="">
+      <li><a href="#">Contact</a></li>
+      <li><%= link_to "Meet the team"%></li>
+      <li><a href="#">Terms &amp; Conditions</a></li>
+      <li><a href="#">FAQ</a></li>
+    </ul>
+  </div>
+
+
   <div class="footer-copyright">
     &copy; 2018 Plannea <i class="fa fa-heart"></i>
   </div>
 </div>
+
+
