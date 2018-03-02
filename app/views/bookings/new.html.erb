@@ -1,6 +1,26 @@
-<h1>Confirm your plan</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <h1>Confirm your plan?</h1>
+      <h3>Plan: <%= @plan.title %></h3>
+
+      <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+      <h3>Pick your date:</h3>
+      <%= simple_form_for :search, method: "get" do |f| %>
+        <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <% end %>
+            <%= simple_form_for([@plan, @booking]) do |f| %>
+        <div class="form-inputs">
+          <%= f.check_box :confirmed %>
+          <%= f.button :submit, "Book", class: "btn btn-primary" %>
+        </div>
+
+      <% end %>
+      </div>
 
 
 
-<%= link_to "boton", plans_path , class: "btn btn-primary btn-lg" %>
-<!-- this button has to be change -->
+    </div>
+  </div>
+</div>

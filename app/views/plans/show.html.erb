@@ -10,7 +10,6 @@
 
 <!-- Page Content -->
 <div class="container">
-
   <div class="row">
    <div class="col-sm-4">
     <h2 class="mt-4">Summary:</h2>
@@ -20,22 +19,24 @@
       <li>Price: <%= @plan[:price] %></li>
       <li>Review in stars</li>
     </ul>
+
   </div>
   <div class="col-sm-8">
     <h2 class="mt-4">Description:</h2>
     <p><%= @plan[:description] %></p>
-    <p><%= link_to "Book Now", new_plan_booking_path(@plan) , class: "btn btn-primary btn-lg" %></>
+    <p><%= link_to "Book Now", new_plan_booking_path(@plan) , class: "btn btn-primary btn-lg" %></p>
       <% if current_user = @plan.user %>
-    <p>
-      <%= link_to "Edit", edit_plan_path(@plan), class: "btn btn-primary btn-lg" %>
-      <%= link_to "Delete", plan_path(@plan), class: "btn btn-primary btn-lg", method: :delete,
-        data: { confirm: "Are you sure?" } %></p>
-      <% end %>
-      <p><%= link_to "Back to plans", plans_path %></p>
+        <p>
+          <%= link_to "Edit", edit_plan_path(@plan), class: "btn btn-primary btn-lg" %>
+          <%= link_to "Delete", plan_path(@plan), class: "btn btn-primary btn-lg", method: :delete,
+          data: { confirm: "Are you sure?" } %>
+        </p>
+        <% end %>
+        <p><%= link_to "Back to plans", plans_path %></p>
+        <p></p>
+  </div>
+</div>
 
-      </div>
-
-    </div>
 
 
 

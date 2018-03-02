@@ -1,16 +1,24 @@
 class BookingsController < ApplicationController
 
   def index
-    @booking = Booking.all
+    @bookings = current_user.bookings
   end
 
   def new
+    @plan = Plan.find(params[:plan_id])
     @booking = Booking.new()
   end
 
   def create
-    new_booking = Booking.new(bookings_params)
-    new_booking.save
+    @plan = Plan.find(params[:plan_id])
+    @booking = Booking.new(booking_params)
+    @booking.user = current_user
+    @booking.plan = @plan
+    if @booking.save
+      redirect_to plan_bookings_path
+    else
+      render :new
+    end
   end
 
   def confirmed
@@ -18,8 +26,8 @@ class BookingsController < ApplicationController
   end
 
   private
-  def bookings_params
-    params.require(:bookings).permit(:confirmed)
+  def booking_params
+    params.require(:booking).permit(:confirmed)
   end
 end
 
