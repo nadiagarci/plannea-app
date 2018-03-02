@@ -1,0 +1,8 @@
+<%= form_tag plans_path, method: :get, class: "form-inline" do%>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control form-control-lg",
+      placeholder: "Search"
+      %>
+  <%= submit_tag "Find a plan", class: "btn btn-primary" %>
+<% end %>
