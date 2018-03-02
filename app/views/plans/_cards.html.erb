@@ -3,7 +3,7 @@
   <div class="row">
     <% @plans.each do |plan| %>
       <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('<%= cl_image_path(plan.picture) %>');">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('<%= cl_image_path(plan.picture)%>');">
           <div class="card-category">*****</div>
           <div class="card-description">
             <h2><%= plan[:title] %></h2>
