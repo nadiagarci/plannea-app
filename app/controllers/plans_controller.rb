@@ -8,6 +8,16 @@ class PlansController < ApplicationController
     else
       @plans = Plan.all
     end
+
+    @plans = Plan.where.not(latitude: nil, longitude: nil)
+
+    @markers = @plans.map do |plan|
+      {
+        lat: plan.latitude,
+        lng: plan.longitude,
+        infoWindow: { content: render_to_string(partial: "/plans/map_box", locals: { plan: plan }) }
+      }
+    end
   end
 
   def show
@@ -17,23 +27,23 @@ class PlansController < ApplicationController
 
 
  # almu coded: new and create
-  def new
-    @plan = Plan.new
-  end
+ def new
+  @plan = Plan.new
+end
 
-  def create
-    @plan = Plan.new(plan_params)
-    @plan.user = current_user
-    if @plan.save
-      redirect_to plan_path(@plan)
-    else
-      render :new
-    end
+def create
+  @plan = Plan.new(plan_params)
+  @plan.user = current_user
+  if @plan.save
+    redirect_to plan_path(@plan)
+  else
+    render :new
   end
+end
 
-  def edit
-    @plan = Plan.find(params[:id])
-  end
+def edit
+  @plan = Plan.find(params[:id])
+end
 
 def update
   @plan = Plan.find(params[:id])
